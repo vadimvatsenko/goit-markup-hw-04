@@ -1,0 +1,20 @@
+.portfolio-projects {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+/* карточка проекта */
+.portfolio-project {
+    width: calc((100% - 60px) / 3);/*  - 100% ширины родителя(1200-30padding=1170(100%) отнимаем два margin по 30px=60  */
+    margin-right: 30px;
+    margin-bottom: 30px; 
+
+    border: 1px solid #EEEEEE;
+}
+
+.portfolio-project:nth-child(3n) { /* - каждый третий элемент в ряду */
+    margin-right: 0
+}
+.portfolio-project:nth-last-child(-n + 3)  { /* - последние три элемента из коллекции */
+    margin-bottom: 0;
+}
