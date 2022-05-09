@@ -20,6 +20,7 @@
                                 0px 2px 2px rgba(0, 0, 0, 0.12);
     --project-border-style: solid #EEEEEE;
    
+   
 }
 /* * {
     outline: 1px solid tomato;
@@ -142,7 +143,17 @@ ul {
 }
 /* баннер */
 .banner {
-    background-color: var(--footer-bg-color);
+    background-color: var(--footer-bg-color); /* - оставляем в случае если не загрузится картинка */
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)), 
+        url(../image/bg/banner.jpg);
+    background-repeat: no-repeat; /* - картинку не повторять */
+    background-position: center; /* - по центру */
+    background-size: cover;
+    margin-left: auto; /* - центрирование баннера */
+    margin-right: auto; /* - центрирование баннера */
+    max-width: 1600px; /* - ширина баннера, растягивать нельзя */
     min-height: 600px;
     text-align: center; /* - если задать это значение, то все элементы внутри секции будут по центру, если их дети display: inline-block */
     padding-top: 200px;
@@ -195,6 +206,28 @@ ul {
 .peculiarities-list {
     width: calc((100% - 90px) / 4); /* - три отступа по 30px */
 }
+.peculiarities-list::before {
+    display: block; /* - ставим, потому, что не работает геометрия */
+    content:'';
+    height: 120px;
+    background: #F5F4FA;
+    border-radius: 4px;
+    background-image: url(../image/peculiarities/antenna.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-style: contain;
+    margin-bottom: 30px;
+}
+.peculiarities-list.icon-clock::before { /* - дополнительные классы для добавления разных иконок */
+    background-image: url(../image/peculiarities/clock.svg);
+}
+.peculiarities-list.icon-notebook::before {
+    background-image: url(../image/peculiarities/notebook.svg);
+}
+.peculiarities-list.icon-astronaut::before {
+    background-image: url(../image/peculiarities/astronaut.svg);
+}
+
 .peculiarities-list + .peculiarities-list {
     margin-left: 30px;
 }
