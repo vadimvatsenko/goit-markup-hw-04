@@ -1,0 +1,38 @@
+* {
+    outline: 1px solid tomato;
+}
+
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* обнуляем стили браузера у списков */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.container {
+    width: 1200px;
+    padding-top: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+.email {
+    display: inline-block;
+    align-items: center;
+    margin: 0 auto;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+}
+.envelope-icon {
+    margin-right: 10px;
+}

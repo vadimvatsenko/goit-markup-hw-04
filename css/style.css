@@ -19,7 +19,10 @@
                                 0px 1px 2px rgba(0, 0, 0, 0.08),
                                 0px 2px 2px rgba(0, 0, 0, 0.12);
     --project-border-style: solid #EEEEEE;
-   
+    --link-color: #AFB1B8; 
+    --project-shadow:   0px 1px 1px rgba(0, 0, 0, 0.12),
+                        0px 4px 4px rgba(0, 0, 0, 0.06),
+                        1px 4px 6px rgba(0, 0, 0, 0.16);
    
 }
 /* * {
@@ -117,6 +120,7 @@ ul {
 }
 .header-contacts {
     display: flex;
+    align-items: center;
     margin-left: auto; /* - контакты отодвигаем в право  */
 }
 .header-contacts>.header-contact + .header-contact {
@@ -124,6 +128,8 @@ ul {
 }
 .header-contact>.email,
 .header-contact>.phone {
+    display: flex;
+    align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
     
@@ -134,12 +140,16 @@ ul {
     letter-spacing: 0.02em;
     text-decoration: none;
 }
-
 .header-contact>.email:hover,
 .header-contact>.email:focus,
 .header-contact>.phone:hover,
 .header-contact>.phone:focus {
     color: var(--hover-focus-color);
+}
+.phone-icon,
+.envelope-icon {
+    margin-right: 10px;
+    fill: currentColor
 }
 /* баннер */
 .banner {
@@ -215,7 +225,6 @@ ul {
     background-image: url(../image/peculiarities/antenna.svg);
     background-repeat: no-repeat;
     background-position: center;
-    border-style: contain;
     margin-bottom: 30px;
 }
 .peculiarities-list.icon-clock::before { /* - дополнительные классы для добавления разных иконок */
@@ -263,7 +272,8 @@ ul {
     min-height: auto;
 }
 .doing-title,
-.team-title {
+.team-title,
+.client-title {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
@@ -289,6 +299,8 @@ ul {
 .team-cards .card-descr {
     padding-top: 30px;
     padding-bottom: 30px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 .team-card> .card-img {
     display: block;
@@ -309,7 +321,58 @@ ul {
     line-height: 1.19;
     text-align: center;
 }
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+.social-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--link-color);
+}
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--hover-focus-color);
+    color:var(--white-tx-bg-color)
+}
+.icon-img {
+    width: 20px;
+    height: 20px;
+    fill: currentColor /* - унаследует текущее состояние color у родителя в данном случае у social-link */
+}
 
+.client-lists {
+    display: flex;
+    margin-top: 50px;
+}
+.client-list + .client-list{
+    margin-left: 30px;
+}
+.client-list>.client-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--link-color);
+    color: var(--link-color);
+    border-radius: 4px;
+    width: 170px;
+    height: 92px;
+}
+.client-link:hover,
+.client-link:focus {
+    border-color: var(--hover-focus-color);
+    color: var(--hover-focus-color)
+}
+.client-logo {
+    fill: currentColor;
+    width: 160px;
+    height: 60px;
+}
 .footer {
     min-height: 252px;
     padding-top: 60px;
@@ -346,6 +409,30 @@ ul {
 .footer-phone:focus {
     color: var(--hover-focus-color)
 }
+.footer-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+.footer-social{
+    margin-left: 70px;
+}
+.social-title {
+    font-size: 14px;
+    line-height: 1.14;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white-tx-bg-color)
+}
+.footer-social .social-link {
+    background: rgba(255, 255, 255, 0.1);
+}
+.social-footer +.social-footer {
+    margin-left: 10px;
+}
+.footer-icons {
+    margin-top: 20px;
+}
+
 /* portfolio  */
 /* Главного заголвка Портфолио нет в макете, потому скрыт */
 .portfolio-title {
@@ -414,6 +501,10 @@ ul {
     margin-right: 30px;
     margin-bottom: 30px;
 }
+.portfolio-project:hover,
+.portfolio-project:focus {
+    box-shadow: var(--project-shadow)
+}
 .portfolio-project .project-descr {
     padding: 20px 24px;
     border: var(--project-border-style);
@@ -426,3 +517,10 @@ ul {
     max-width: 100%;
     height: auto;
 }
+
+
+
+
+
+
+    
