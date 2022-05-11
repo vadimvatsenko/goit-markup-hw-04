@@ -23,6 +23,9 @@
     --project-shadow:   0px 1px 1px rgba(0, 0, 0, 0.12),
                         0px 4px 4px rgba(0, 0, 0, 0.06),
                         1px 4px 6px rgba(0, 0, 0, 0.16);
+    --peculiarities-list-bg: #F5F4FA;
+    --footer-social-bg: rgba(255, 255, 255, 0.1);
+    --banner-linear-gradient: rgba(47, 48, 58, 0.4);
    
 }
 /* * {
@@ -155,8 +158,8 @@ ul {
 .banner {
     background-color: var(--footer-bg-color); /* - оставляем в случае если не загрузится картинка */
     background-image: linear-gradient(
-        rgba(47, 48, 58, 0.4),
-        rgba(47, 48, 58, 0.4)), 
+        var(--banner-linear-gradient),
+        var(--banner-linear-gradient)), 
         url(../image/bg/banner.jpg);
     background-repeat: no-repeat; /* - картинку не повторять */
     background-position: center; /* - по центру */
@@ -220,7 +223,7 @@ ul {
     display: block; /* - ставим, потому, что не работает геометрия */
     content:'';
     height: 120px;
-    background: #F5F4FA;
+    background: var(--peculiarities-list-bg);
     border-radius: 4px;
     background-image: url(../image/peculiarities/antenna.svg);
     background-repeat: no-repeat;
@@ -279,6 +282,7 @@ ul {
     line-height: 1.17;
     text-align: center;
 }
+/* наша команда */
 .team {
     min-height: 648px;
     background-color: var(--bg-team);
@@ -341,11 +345,11 @@ ul {
     color:var(--white-tx-bg-color)
 }
 .icon-img {
-    width: 20px;
-    height: 20px;
+    /* width: 20px;
+    height: 20px; */
     fill: currentColor /* - унаследует текущее состояние color у родителя в данном случае у social-link */
 }
-
+/* наши клиенты */
 .client-lists {
     display: flex;
     margin-top: 50px;
@@ -370,8 +374,8 @@ ul {
 }
 .client-logo {
     fill: currentColor;
-    width: 160px;
-    height: 60px;
+   /*  width: 160px;
+    height: 60px; */
 }
 .footer {
     min-height: 252px;
@@ -391,22 +395,22 @@ ul {
 .footer-contact + .footer-contact {
     margin-top: 9px;
 }
-.footer-addr {
+.footer-contact>.address {
     color: var(--white-tx-bg-color);
 
 }
-.footer-email,
-.footer-phone {
+.footer-contact>.email,
+.footer-contact>.phone {
     color: var(--footer-contact-color);
 
     text-decoration: none;
 
     cursor: pointer
 }
-.footer-email:hover,
-.footer-email:focus,
-.footer-phone:hover,
-.footer-phone:focus {
+.footer-contact>.email:hover,
+.footer-contact>.email:focus,
+.footer-contact>.phone:hover,
+.footer-contact>.phone:focus {
     color: var(--hover-focus-color)
 }
 .footer-wrapper {
@@ -418,14 +422,24 @@ ul {
 }
 .social-title {
     font-size: 14px;
-    line-height: 1.14;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--white-tx-bg-color)
 }
-.footer-social .social-link {
-    background: rgba(255, 255, 255, 0.1);
+.footer-social .social-icon {
+    margin-right: 10px;
 }
+.footer-social .social-icon:last-child {
+    margin-right: 0;
+}
+.footer-social .social-link {
+    background: var(--footer-social-bg);
+}
+.footer-social .social-link:hover,
+.footer-social .social-link:focus {
+    background: var(--hover-focus-color);
+}
+
 .social-footer +.social-footer {
     margin-left: 10px;
 }
