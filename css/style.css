@@ -515,8 +515,11 @@ ul {
     margin-right: 30px;
     margin-bottom: 30px;
 }
-.portfolio-project:hover,
-.portfolio-project:focus {
+.project-link { /* - ссылку дедаем блочной, так как на нее не работает геометрия и эффекты ховера */
+    display: block;
+}
+.project-link:hover,
+.project-link:focus {
     box-shadow: var(--project-shadow)
 }
 .portfolio-project .project-descr {
@@ -531,8 +534,6 @@ ul {
     max-width: 100%;
     height: auto;
 }
-
-
 
 
 
